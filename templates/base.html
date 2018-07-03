@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>{% block title %}TITLE{% endblock %}</title>
+  <link rel="stylesheet" href="../static/madlibs.css">
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/ac/f0/b6/acf0b628-4610-2548-e0d8-2538c766f321/AppIcon-1x_U007emarketing-85-220-5.png/246x0w.jpg" alt="Mad Libs logo">
+    </div>
+    <div class='name'>{% block name %}NAME{% endblock %}</div>
+  </header>
+  {% block content %}BODY CONTENT{% endblock %}
+  <footer>Copyright Ubermelon 2018</footer>
+</body>
+</html>
