@@ -51,13 +51,13 @@ def show_madlib_form():
     if game == "no":
         return render_template("goodbye.html", name=name)
     elif game == "yes":
-        return render_template("game.html")
+        return render_template("game.html", name=name)
 
 
 @app.route('/madlib')
 def show_madlib():
     """Shows madlib with user inputs"""
-    name = request.args.get("name")
+    name = request.args.get("name").capitalize()
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.getlist("adjective")

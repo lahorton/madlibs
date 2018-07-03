@@ -1,15 +1,24 @@
-<!doctype html>
-<html>
-<head>
-  <title>A MadLib</title>
-</head>
-<body>
-    <h2>Your personalized Madlib:</h2>
- 
-	<p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.<br>
-		When {{ name }} went to pick it up, it burst into flames in a totally<br>
-		{{ adjective[0] }} way. When {{ name }} picked up the {{ adjective[1] }} {{ noun }} it looked {{ adjective[2] }}.
-	</p>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %} A MadLib {% endblock %}
+
+{% block name %}{{ name }}{% endblock %}
+<input type="hidden" name="name" value={{ name }}>
+
+{% block content %}
+    <h1>Your personalized Madlib:</h1>
+
+    {% if color=='red' %}
+		<p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.<br>
+			When {{ name }} went to pick it up, it burst into flames in a totally<br>
+			{{ adjective[0] }} way. When {{ name }} picked up the {{ adjective[1] }} {{ noun }} it looked {{ adjective[2] }}.
+		</p>
+	{% elif name[0] in ['R', 'L', 'T', 'S'] %}
+		<p>You don't get to play, your name starts with the wrong letter.</p>
+	{% else %}
+	<p>There once was a {{ color }} {{ noun }} sitting in the bar.<br>
+		When {{ name }} went to drink it up, it burst into flames in a totally<br>
+		{{ adjective[0] }} way. When {{ name }} ran out of the {{ adjective[1] }} {{ noun }} it looked {{ adjective[2] }}.
+	</p>
+	{% endif %}
+{% endblock %}

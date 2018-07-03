@@ -1,12 +1,14 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Game</title>
-</head>
-<body>
-    Let's play a game!
+{% extends 'base.html' %}
+
+{% block title %} A Game {% endblock %}
+
+{% block name %}{{ name }}{% endblock %}
+
+{% block content %}
+    <h1>Let's play a game!</h1>
    	<form action="/madlib" method="GET">
-   		<ul>
+   		<ul class="choices">
+   			<input type="hidden" name="name" value={{ name }}>
    			<li>Enter a person's name: <input type="text" name="name"></li>
 			<li>Pick a color:
 				<select name="color">
@@ -23,9 +25,7 @@
 				<input type="checkbox" name="adjective" value="fancy">Fancy
 				<input type="checkbox" name="adjective" value="demur">Demur
 			</li>
-
 		</ul>
    		<input type="submit">
    	</form>
-</body>
-</html>
+{% endblock %}

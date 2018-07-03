@@ -1,0 +1,38 @@
+h1 {
+	font-family: "Gothic";
+	color: white;
+	font-size: 1.5em;
+}
+
+body {
+	background-color: violet;
+}
+
+p {
+	font-size: 1.25em;
+	color: black;
+}
+
+.choices {
+	color: white;
+	font-size: 1.25em;
+}
+
+header {
+		border: 10px double white;
+}
+
+.logo {
+	height: 15%;
+	width: 15%;
+	display: inline;
+}
+
+.name {
+	display: inline;
+	color: white;
+	font-family: "Gothic";
+	font-size: 3em;
+	text-align: center;
+	margin: 75px 75px 75px 75px;
+}
